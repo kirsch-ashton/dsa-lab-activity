@@ -1,13 +1,13 @@
 import java.util.Scanner;
 
-/* Description: Program demonstrates Binary Search algorithm to find an element in the array.
-User must first input the size, elements, and the target.
+/* Description: Program demonstrates search trace of Binary Search algorithm to find an element in the array.
+After user inputs the size, elements, and the target. The function will track the value of low, high, and mid.
 
 Programmed by: Kurt Dwayne C. Gulle BSIT 48079 Data Structures and Algorithm
 
-Last Modified: 9/5/2026 16:10
+Last Modified: 9/5/2026 16:30
 
-Version: 1.0
+Version: 2.0
 
 Acknowledgegments: https://www.w3schools.com/dsa/dsa_algo_binarysearch.php
 
@@ -23,13 +23,16 @@ public class BinarySearch{
         int mid = low + (high - low) / 2;
         
         if(array[mid] == target){
+            System.out.println("Binary Search: Low - " + low + ", High - " + high + ", Mid " + mid);
             return mid;
         }
         
         if(target < array[mid]){
+            System.out.println("Binary Search: Low - " + low + ", High - " + high + ", Mid " + mid);
             return bSearch(array, target, low, mid - 1);
         }
         
+        System.out.println("Binary Search: Low - " + low + ", High - " + high + ", Mid " + mid);
         return bSearch(array, target, mid + 1, high);
     }
     
